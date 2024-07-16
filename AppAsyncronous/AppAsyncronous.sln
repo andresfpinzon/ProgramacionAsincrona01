@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{C7CA291C-ED2C-406B-9AF0-8F10EEBA320C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncBreakfast", "AsyncBreakfast\AsyncBreakfast.csproj", "{4CA4521A-5333-43E5-9581-DDE4F7C11799}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7CA291C-ED2C-406B-9AF0-8F10EEBA320C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CA291C-ED2C-406B-9AF0-8F10EEBA320C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CA291C-ED2C-406B-9AF0-8F10EEBA320C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CA291C-ED2C-406B-9AF0-8F10EEBA320C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA4521A-5333-43E5-9581-DDE4F7C11799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA4521A-5333-43E5-9581-DDE4F7C11799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA4521A-5333-43E5-9581-DDE4F7C11799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA4521A-5333-43E5-9581-DDE4F7C11799}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
