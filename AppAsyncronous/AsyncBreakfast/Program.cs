@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.Intrinsics.X86;
+using System.Threading;
 using System.Threading.Tasks;
 using Models;
 namespace AsyncBreakfast
@@ -13,21 +15,45 @@ namespace AsyncBreakfast
     //internal class Toast { }
     class Program
     {
-        static void Main(string[] args)
+
+        //static void Main(string[] args)
+        //{
+        //    Coffee cup = PourCoffee();
+        //    Console.WriteLine("coffee is ready");
+        //    Egg eggs = FryEggs(2);
+        //    Console.WriteLine("eggs are ready");
+        //    Bacon bacon = FryBacon(3);
+        //    Console.WriteLine("bacon is ready");
+        //    Toast toast = ToastBread(2);
+        //    ApplyButter(toast);
+        //    ApplyJam(toast);
+        //    Console.WriteLine("toast is ready");
+        //    Juice oj = PourOJ();
+        //    Console.WriteLine("oj is ready");
+        //    Console.WriteLine("Breakfast is ready!");
+        //}
+
+        //Comencemos por actualizar este código para que el hilo no se bloquee mientras se 
+        //ejecutan las tareas.La palabra clave await proporciona una forma no bloqueante de
+        //iniciar una tarea y luego continuar la ejecución cuando esa tarea se completa
+        static async Task Main(string[] args)
         {
             Coffee cup = PourCoffee();
-            Console.WriteLine("coffee is ready");
-            Egg eggs = FryEggs(2);
-            Console.WriteLine("eggs are ready");
-            Bacon bacon = FryBacon(3);
-            Console.WriteLine("bacon is ready");
-            Toast toast = ToastBread(2);
+            Console.WriteLine("Coffee is ready");
+            Task<Egg> eggsTask = FryEggsAsync(2);
+            Task<Bacon> baconTask = FryBaconAsync(3);
+            Task<Toast> toastTask = ToastBreadAsync(2);
+            Toast toast = await toastTask;
             ApplyButter(toast);
             ApplyJam(toast);
-            Console.WriteLine("toast is ready");
+            Console.WriteLine("Toast is ready");
             Juice oj = PourOJ();
-            Console.WriteLine("oj is ready");
-            Console.WriteLine("Breakfast is ready!");
+            Console.WriteLine("Oj is ready");
+            Egg eggs = await eggsTask;
+            Console.WriteLine("Eggs are ready");
+            Bacon bacon = await baconTask;
+            Console.WriteLine("Bacon is ready");
+            Console.WriteLine("Breakfast is ready!")
         }
         private static Juice PourOJ()
         {
